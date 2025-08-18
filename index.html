@@ -1,9 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>My Website</title>
-    </head>
-    <body>
-        <h1>This is my Github pages website!</h1>
-    </body>
+
+<head>
+    <title>Portfolio Website</title>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <p>Jasmine</p>
+            <ul>
+                <li><a href="#Home">Home</a></li>
+                <li><a href="#About">About</a></li>
+                <li><a href="#Projects">Projects</a></li>
+                <li><a href="#Contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section id="Home">
+        <h1>Jasmine De Jesus</h1>
+        <p>Building | Learning | Growing</p>
+
+        <button onclick="location.href='#Projects'">Explore My Work</button>
+        <button onclick="location.href='https://www.google.com/'">
+            Download CV
+        </button>
+    </section>
+    <section id="About">
+        <div class="about-me">
+            <h2>About Me</h2>
+            <p>A glimpse into my journey</p>
+            <p>I’m a 3rd-year Computer Science student passionate about exploring different areas in technology. I enjoy
+                learning new skills and building things that helps me to grow.</p>
+            <p>Currently, I’m exploring web development, databases, and cloud computing. As a student, my journey is
+                still unfolding, but I’m eager to collaborate, learn from real-world experiences, and contribute to
+                helpful projects.</p>
+            <p>When I’m not coding, you’ll often find me reading or simply bed-rotting — recharging before diving back
+                into tech.</p>
+            <img src="https://via.placeholder.com/150" alt="Placeholder Image">
+        </div>
+        <div class="tech-stack">
+            <h2>Tech Stack</h2>
+            <p>Technologies I’m experienced with and currently working on</p>
+            <div class="container-tech-stack">
+                <div class="language">
+                    <img src="https://via.placeholder.com/50" alt="Language 1">
+                    <p>Programming Language Title 1</p>
+                    <p>Description of Language 1</p>
+                </div>
+                <div class="language">
+                    <img src="https://via.placeholder.com/50" alt="Language 2">
+                    <p>Programming Language Title 2</p>
+                    <p>Description of Language 2</p>
+                </div>
+                <div class="language">
+                    <img src="https://via.placeholder.com/50" alt="Language 3">
+                    <p>Programming Language Title 3</p>
+                    <p>Description of Language 3</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="Projects">
+        <h2>Projects</h2>
+        <p>A few works that reflect my journey</p>
+        <div class="container-projects">
+            <div class="project">
+                <h3>Project Title 1</h3>
+                <p>Short description of Project 1.</p>
+                <a href="#">View Project</a>
+                <a href="https://www.example.com/">Github repo</a>
+            </div>
+            <div class="project">
+                <h3>Project Title 2</h3>
+                <p>Short description of Project 2.</p>
+                <a href="#">View Project</a>
+                <a href="https://www.example.com/">Github repo</a>
+            </div>
+            <div class="project">
+                <h3>Project Title 3</h3>
+                <p>Short description of Project 3.</p>
+                <a href="#">View Project</a>
+                <a href="https://www.example.com/">Github repo</a>
+            </div>
+        </div>
+    </section>
+    <section id="Contact">
+        <h2>Contact</h2>
+        <p>Get in Touch</p>
+        <div class="container-contact-information">
+            <div class="contact-item">
+                <h3>Location</h3>
+                <p>Dasmariñas, Cavite</p>
+            </div>
+            <div class="contact-item">
+                <h3>Email</h3>
+                <a href="mailto:dejesusjasmine9@gmail.com">dejesusjasmine9@gmail.com</a>
+            </div>
+            <div class="contact-item">
+                <h3>Website</h3>
+                <a href="https://jasminedejesus.github.io">jasminedejesus.github.io</a>
+            </div>
+        </div>
+        <div class="container-contact">
+        <form action="#" method="post">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+    <footer>
+        <p>&copy; 2025 Jasmine De Jesus. All rights reserved.</p>
+    </footer>
+</body>
+
 </html>
