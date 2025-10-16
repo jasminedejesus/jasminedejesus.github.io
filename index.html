@@ -1,133 +1,477 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <title>Portfolio Website</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-        rel="stylesheet">
-</head>
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
 
-<body>
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: "Poppins", sans-serif;
+        line-height: 1.6;
+        margin: 0;
+        padding: 0;
+      }
+
+      header {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background: rgba(255, 255, 255, 0.95);
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+      }
+
+      nav {
+        display: flex;
+        justify-content: right;
+        padding: 1rem 2rem;
+      }
+
+      .logo-text {
+        display: inline-block;
+        font-family: "Poppins", sans-serif;
+        font-weight: 600;
+        font-size: 1.5rem;
+        text-decoration: none;
+        margin-right: auto;
+      }
+
+      .logo-text p {
+        display: inline;
+      }
+
+      .jas {
+        color: #ff6b9d;
+      }
+
+      .mine {
+        color: #202020;
+      }
+
+      nav ul {
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+        list-style: none;
+      }
+
+      nav ul li a {
+        text-decoration: none;
+        font-family: "Poppins", sans-serif;
+        color: #202020;
+        font-weight: 400;
+        padding: 4px 0;
+        transition: all;
+        transition-duration: 300ms;
+      }
+
+      nav ul li a:hover {
+        color: #ff6b9d;
+        border-bottom: 1px solid #ff6b9d;
+      }
+
+      section {
+        min-height: 100vh;
+        padding: 100px 20px;
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        transition: background-color 0.5s ease;
+      }
+
+      footer {
+        background: #f8f9fa;
+        padding: 30px 20px;
+        text-align: center;
+        color: #202020;
+      }
+
+      /* Section-specific background colors */
+      #Home {
+        background-image: url("assets/bg.png"); /* Replace with your image file */
+        background-size: cover; /* Make image cover the whole section */
+        background-position: center; /* Center the image */
+        background-repeat: no-repeat; /* Prevent image from repeating */
+        color: #202020; /* Text color */
+        min-height: 100vh; /* Use min-height instead of height */
+        position: relative; /* For potential overlay or content positioning */
+        display: flex; /* For centering content */
+        justify-content: center; /* Center horizontally */
+        align-items: center; /* Center vertically */
+        text-align: center; /* Center text */
+      }
+
+      #About {
+        background-color: #202020; /* Dark gray */
+        color: #fff;
+      }
+
+      .tech-stack {
+        background-color: #fdcee0; /* Light pink */
+        color: #202020;
+      }
+
+      #Projects {
+        background-color: #ffffff; /* White */
+        color: #202020;
+      }
+
+      #Contact {
+        background-color: #202020; /* Dark gray */
+        color: #fff;
+      }
+
+      /* Typography and elements */
+      h1 {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+        color: inherit;
+      }
+
+      h2 {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+        color: inherit;
+      }
+
+      h3 {
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+        color: inherit;
+      }
+
+      p {
+        margin-bottom: 1.5rem;
+        max-width: 800px;
+        color: inherit;
+      }
+
+      button {
+        position: relative;
+        top: 120px;;
+        background-color: #ff6b9d;
+        color: white;
+        border: none;
+        padding: 0.6rem 1.5rem;
+        border-radius: 4px;
+        cursor: pointer;
+        font-weight: 500;
+        margin: 0.5rem;
+        transition: all 0.3s ease;
+        font-family: "Poppins", sans-serif;
+      }
+
+      button:hover {
+        background-color: #ff4d8d;
+        transform: translateY(-2px);
+      }
+
+      /* About section specific styling */
+      .about-me img {
+        border-radius: 50%;
+        margin-top: 2rem;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      }
+
+      /* Tech stack section */
+      .container-tech-stack {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 2rem;
+        margin-top: 2rem;
+        max-width: 1000px;
+      }
+
+      .language {
+        background-color: rgba(255, 255, 255, 0.7);
+        padding: 1.5rem;
+        border-radius: 8px;
+        width: 250px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+        color: #202020;
+      }
+
+      .language:hover {
+        transform: translateY(-5px);
+        background-color: rgba(255, 255, 255, 0.9);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+      }
+
+      .language img {
+        margin-bottom: 1rem;
+      }
+
+      /* Projects section */
+      .container-projects {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 2rem;
+        margin-top: 2rem;
+        max-width: 1000px;
+      }
+
+      .project {
+        background-color: #f9f9f9;
+        padding: 1.5rem;
+        border-radius: 8px;
+        width: 300px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+        color: #333;
+      }
+
+      .project:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+      }
+
+      .project a {
+        display: inline-block;
+        margin: 0.5rem;
+        color: #ff6b9d;
+        text-decoration: none;
+        font-weight: 500;
+      }
+
+      .project a:hover {
+        text-decoration: underline;
+      }
+
+      /* Contact section */
+      .container-contact-information {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 2rem;
+        margin-bottom: 3rem;
+        max-width: 800px;
+      }
+
+      .contact-item {
+        background-color: rgba(255, 255, 255, 0.1);
+        padding: 1.5rem;
+        border-radius: 8px;
+        width: 200px;
+      }
+
+      .contact-item a {
+        color: #ff6b9d;
+        text-decoration: none;
+      }
+
+      .contact-item a:hover {
+        text-decoration: underline;
+      }
+
+      .container-contact {
+        max-width: 600px;
+        width: 100%;
+      }
+
+      form {
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+      }
+
+      label {
+        margin-bottom: 0.5rem;
+        font-weight: 500;
+        color: inherit;
+      }
+
+      input,
+      textarea {
+        padding: 0.8rem;
+        margin-bottom: 1.5rem;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        font-family: inherit;
+        background-color: rgba(255, 255, 255, 0.9);
+        color: #202020;
+      }
+
+      textarea {
+        min-height: 150px;
+        resize: vertical;
+      }
+
+      @media (max-width: 768px) {
+        nav {
+          flex-direction: column;
+          align-items: center;
+          gap: 1rem;
+        }
+
+        nav ul {
+          margin-top: 0.5rem;
+        }
+
+        h1 {
+          font-size: 2.5rem;
+        }
+
+        h2 {
+          font-size: 2rem;
+        }
+
+        .container-tech-stack,
+        .container-projects,
+        .container-contact-information {
+          flex-direction: column;
+          align-items: center;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
     <header>
-        <nav>
-            <div class="logo-text">
-                <p><span class="jas">Jas</span><span class="mine">mine</span></p>
-            </div>
+      <nav>
+        <div class="logo-text">
+          <p><span class="jas">Jas</span><span class="mine">mine</span></p>
+        </div>
 
-            <ul>
-                <li><a href="#Home">Home</a></li>
-                <li><a href="#About">About</a></li>
-                <li><a href="#Projects">Projects</a></li>
-                <li><a href="#Contact">Contact</a></li>
-            </ul>
-        </nav>
+        <ul>
+          <li><a href="#Home">Home</a></li>
+          <li><a href="#About">About</a></li>
+          <li><a href="#Projects">Projects</a></li>
+          <li><a href="#Contact">Contact</a></li>
+        </ul>
+      </nav>
     </header>
+
     <section id="Home">
-        <h1>Jasmine De Jesus</h1>
-        <p>Building | Learning | Growing</p>
-
-        <button onclick="location.href='#Projects'">Explore My Work</button>
-        <button onclick="location.href='https://www.google.com/'">
-            Download CV
-        </button>
+      <button onclick="location.href='#Projects'">Explore My Work</button>
     </section>
+
     <section id="About" class="about-me">
-
-        <h2>About Me</h2>
-        <p>A glimpse into my journey</p>
-        <p>I’m a 3rd-year Computer Science student passionate about exploring different areas in technology. I enjoy
-            learning new skills and building things that helps me to grow.</p>
-        <p>Currently, I’m exploring web development, databases, and cloud computing. As a student, my journey is
-            still unfolding, but I’m eager to collaborate, learn from real-world experiences, and contribute to
-            helpful projects.</p>
-        <p>When I’m not coding, you’ll often find me reading or simply bed-rotting — recharging before diving back
-            into tech.</p>
-        <img src="https://via.placeholder.com/150" alt="Placeholder Image">
+      <h2>About Me</h2>
+      <p>A glimpse into my journey</p>
+      <p>
+        I'm a 3rd-year Computer Science student passionate about exploring
+        different areas in technology. I enjoy learning new skills and building
+        things that helps me to grow.
+      </p>
+      <p>
+        Currently, I'm exploring web development, databases, and cloud
+        computing. As a student, my journey is still unfolding, but I'm eager to
+        collaborate, learn from real-world experiences, and contribute to
+        helpful projects.
+      </p>
+      <p>
+        When I'm not coding, you'll often find me reading or simply bed-rotting
+        — recharging before diving back into tech.
+      </p>
+      <img src="https://via.placeholder.com/150" alt="Placeholder Image" />
     </section>
 
-    <section id="About" class="tech-stack">
-        <h2>Tech Stack</h2>
-        <p>Technologies I’m experienced with and currently working on</p>
-        <div class="container-tech-stack">
-            <div class="language">
-                <img src="https://via.placeholder.com/50" alt="Language 1">
-                <p>Programming Language Title 1</p>
-                <p>Description of Language 1</p>
-            </div>
-            <div class="language">
-                <img src="https://via.placeholder.com/50" alt="Language 2">
-                <p>Programming Language Title 2</p>
-                <p>Description of Language 2</p>
-            </div>
-            <div class="language">
-                <img src="https://via.placeholder.com/50" alt="Language 3">
-                <p>Programming Language Title 3</p>
-                <p>Description of Language 3</p>
-            </div>
+    <section class="tech-stack">
+      <h2>Tech Stack</h2>
+      <p>Technologies I'm experienced with and currently working on</p>
+      <div class="container-tech-stack">
+        <div class="language">
+          <img src="https://via.placeholder.com/50" alt="Language 1" />
+          <p>Programming Language Title 1</p>
+          <p>Description of Language 1</p>
         </div>
+        <div class="language">
+          <img src="https://via.placeholder.com/50" alt="Language 2" />
+          <p>Programming Language Title 2</p>
+          <p>Description of Language 2</p>
         </div>
+        <div class="language">
+          <img src="https://via.placeholder.com/50" alt="Language 3" />
+          <p>Programming Language Title 3</p>
+          <p>Description of Language 3</p>
+        </div>
+      </div>
     </section>
+
     <section id="Projects">
-        <h2>Projects</h2>
-        <p>A few works that reflect my journey</p>
-        <div class="container-projects">
-            <div class="project">
-                <h3>Project Title 1</h3>
-                <p>Short description of Project 1.</p>
-                <a href="#">View Project</a>
-                <a href="https://www.example.com/">Github repo</a>
-            </div>
-            <div class="project">
-                <h3>Project Title 2</h3>
-                <p>Short description of Project 2.</p>
-                <a href="#">View Project</a>
-                <a href="https://www.example.com/">Github repo</a>
-            </div>
-            <div class="project">
-                <h3>Project Title 3</h3>
-                <p>Short description of Project 3.</p>
-                <a href="#">View Project</a>
-                <a href="https://www.example.com/">Github repo</a>
-            </div>
+      <h2>Projects</h2>
+      <p>A few works that reflect my journey</p>
+      <div class="container-projects">
+        <div class="project">
+          <h3>Project Title 1</h3>
+          <p>Short description of Project 1.</p>
+          <a href="#">View Project</a>
+          <a href="https://www.example.com/">Github repo</a>
         </div>
-    </section>
-    <section id="Contact">
-        <h2>Contact</h2>
-        <p>Get in Touch</p>
-        <div class="container-contact-information">
-            <div class="contact-item">
-                <h3>Location</h3>
-                <p>Dasmariñas, Cavite</p>
-            </div>
-            <div class="contact-item">
-                <h3>Email</h3>
-                <a href="mailto:dejesusjasmine9@gmail.com">dejesusjasmine9@gmail.com</a>
-            </div>
-            <div class="contact-item">
-                <h3>Website</h3>
-                <a href="https://jasminedejesus.github.io">jasminedejesus.github.io</a>
-            </div>
+        <div class="project">
+          <h3>Project Title 2</h3>
+          <p>Short description of Project 2.</p>
+          <a href="#">View Project</a>
+          <a href="https://www.example.com/">Github repo</a>
         </div>
-        <div class="container-contact">
-            <form action="#" method="post">
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-                <label for="message">Message:</label>
-                <textarea id="message" name="message" required></textarea>
-                <button type="submit">Send Message</button>
-            </form>
+        <div class="project">
+          <h3>Project Title 3</h3>
+          <p>Short description of Project 3.</p>
+          <a href="#">View Project</a>
+          <a href="https://www.example.com/">Github repo</a>
+        </div>
+      </div>
     </section>
-    <footer>
-        <p>&copy; 2025 Jasmine De Jesus. All rights reserved.</p>
-    </footer>
-</body>
 
+    <section id="Contact">
+      <h2>Contact</h2>
+      <p>Get in Touch</p>
+      <div class="container-contact-information">
+        <div class="contact-item">
+          <h3>Location</h3>
+          <p>Dasmariñas, Cavite</p>
+        </div>
+        <div class="contact-item">
+          <h3>Email</h3>
+          <a href="mailto:dejesusjasmine9@gmail.com"
+            >dejesusjasmine9@gmail.com</a
+          >
+        </div>
+        <div class="contact-item">
+          <h3>Website</h3>
+          <a href="https://jasminedejesus.github.io"
+            >jasminedejesus.github.io</a
+          >
+        </div>
+      </div>
+      <div class="container-contact">
+        <form action="#" method="post">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required />
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required />
+          <label for="message">Message:</label>
+          <textarea id="message" name="message" required></textarea>
+          <button type="submit">Send Message</button>
+        </form>
+      </div>
+    </section>
+
+    <footer>
+      <p>&copy; 2025 Jasmine De Jesus. All rights reserved.</p>
+    </footer>
+  </body>
 </html>
