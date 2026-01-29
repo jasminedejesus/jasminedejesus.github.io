@@ -23,31 +23,31 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="scroll-smooth">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[#f5f5f7] text-[#111827] font-sans leading-relaxed max-md:text-[0.95rem]`}
       >
-        <header>
-          <nav>
-            <div className="logo-text">
-              <p>
-                <span className="nzi">nzi</span>
-                <span className="dev">.dev</span>
+        <header className="fixed top-0 w-full bg-white/96 backdrop-blur-md border-b border-slate-200/90 z-[1000]">
+          <nav className="flex justify-between items-center py-[0.85rem] px-[0.9rem] max-md:flex-col max-md:items-center max-md:gap-4">
+            <div className="inline-block font-medium text-[1.3rem] no-underline mr-0 text-[#111827]">
+              <p className="ml-[0.70rem] inline">
+                <span className="text-[1.5rem] text-black font-bold">nzi</span>
+                <span className="text-gray-500">.dev</span>
               </p>
             </div>
 
-            <ul>
+            <ul className="flex gap-[2.1rem] items-center list-none ml-12 max-md:mt-2">
               <li>
-                <a href="/">Home</a>
+                <a href="/" className="no-underline text-[#111827] font-normal py-1 px-0.5 text-[0.95rem] tracking-wide relative transition-colors duration-150 ease-in-out hover:text-[#111827] after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-0 after:h-0.5 after:bg-[#111827] after:rounded-full after:transition-all after:duration-[0.18s] after:ease-out hover:after:w-full focus-visible:after:w-full">Home</a>
               </li>
               <li>
-                <a href="/about">About</a>
+                <a href="/about" className="no-underline text-[#111827] font-normal py-1 px-0.5 text-[0.95rem] tracking-wide relative transition-colors duration-150 ease-in-out hover:text-[#111827] after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-0 after:h-0.5 after:bg-[#111827] after:rounded-full after:transition-all after:duration-[0.18s] after:ease-out hover:after:w-full focus-visible:after:w-full">About</a>
               </li>
               <li>
-                <a href="/projects">Projects</a>
+                <a href="/projects" className="no-underline text-[#111827] font-normal py-1 px-0.5 text-[0.95rem] tracking-wide relative transition-colors duration-150 ease-in-out hover:text-[#111827] after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-0 after:h-0.5 after:bg-[#111827] after:rounded-full after:transition-all after:duration-[0.18s] after:ease-out hover:after:w-full focus-visible:after:w-full">Projects</a>
               </li>
               <li>
-                <a href="/contact">Contact</a>
+                <a href="/contact" className="no-underline text-[#111827] font-normal py-1 px-0.5 text-[0.95rem] tracking-wide relative transition-colors duration-150 ease-in-out hover:text-[#111827] mr-[1.3rem] after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-0 after:h-0.5 after:bg-[#111827] after:rounded-full after:transition-all after:duration-[0.18s] after:ease-out hover:after:w-full focus-visible:after:w-full">Contact</a>
               </li>
             </ul>
           </nav>
